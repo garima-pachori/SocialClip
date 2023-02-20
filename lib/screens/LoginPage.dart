@@ -1,12 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:social_clip/constants/measurement.dart';
+import 'package:social_clip/screens/NavigationPage.dart';
+import 'package:social_clip/screens/SignUpPage.dart';
 import 'package:social_clip/view/gradient.dart';
 
 import '../view/AppButton.dart';
 
 class LoginPage extends StatefulWidget {
+   static const route = '/login_page';
+
   const LoginPage({super.key});
+
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -80,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 15.0,
               ),
-              const AppButton(
+              AppButton(
                   height: 63.0,
                   width: 216.0,
                   color: Colors.red,
@@ -88,24 +93,30 @@ class _LoginPageState extends State<LoginPage> {
                   fontSize: 23.0,
                   fontWeight: FontWeight.bold,
                   radius: 20.0,
+                  onTap: (){
+                    Navigator.pushNamed(context, NavigationPage.route);
+                  },
                 ),
                 const SizedBox(height: 15.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       "Dont have an account? ",
                       style: TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.bold
                       ),
                     ),
-                    Text(
-                      "Sign up here",
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, SignUpPage.route),
+                      child: const Text(
+                        "Sign up here",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red
+                        ),
                       ),
                     )
                   ],

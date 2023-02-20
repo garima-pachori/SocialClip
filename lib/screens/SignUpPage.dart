@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:social_clip/constants/measurement.dart';
+import 'package:social_clip/screens/LoginPage.dart';
 import 'package:social_clip/view/gradient.dart';
 
 import '../view/AppButton.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
+   static const route = '/Signup_page';
+
 
 
   @override
@@ -33,7 +36,7 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(
                 height: 15.0,
               ),
-              const AppButton(
+              AppButton(
                   height: 63.0,
                   width: 216.0,
                   color: Colors.red,
@@ -41,11 +44,14 @@ class SignUpPage extends StatelessWidget {
                   fontSize: 23.0,
                   fontWeight: FontWeight.bold,
                   radius: 20.0,
+                  onTap: (){
+                     Navigator.pushNamed(context, LoginPage.route);
+                  },
                 ),
                 const SizedBox(height: 15.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       "Dont have an account? ",
                       style: TextStyle(
@@ -53,14 +59,17 @@ class SignUpPage extends StatelessWidget {
                         fontWeight: FontWeight.bold
                       ),
                     ),
-                    Text(
-                      "Login here",
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red
+                    InkWell(
+                      onTap:  ()=> Navigator.pushNamed(context, LoginPage.route),
+                      child: Text(
+                        "Login here",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 )
             ],

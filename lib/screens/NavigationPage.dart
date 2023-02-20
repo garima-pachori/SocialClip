@@ -4,7 +4,7 @@ import 'package:social_clip/view/AppButton.dart';
 
 class NavigationPage extends StatelessWidget {
   const NavigationPage({super.key});
-
+   static const route = '/Navigation_page';
 
   @override
   Widget build(BuildContext context) {
