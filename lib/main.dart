@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:social_clip/screens/LoginPage.dart';
+import 'package:social_clip/screens/Auth/LoginPage.dart';
 import 'package:social_clip/screens/NavigationPage.dart';
-import 'package:social_clip/screens/SignUpPage.dart';
+import 'package:social_clip/screens/Auth/SignUpPage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:social_clip/screens/Splash_Screen.dart';
 
 
 Future main() async{
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const SplashScreen(),
       routes: {
         NavigationPage.route: (context) => NavigationPage(),
         LoginPage.route: (context) => LoginPage(),
