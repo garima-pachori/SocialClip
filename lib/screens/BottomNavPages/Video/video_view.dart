@@ -26,6 +26,7 @@ class _VideoViewState extends State<VideoView> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: List.generate(
             buttonList.length, 
             (index){

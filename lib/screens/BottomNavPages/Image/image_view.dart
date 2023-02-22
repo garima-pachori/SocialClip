@@ -27,6 +27,7 @@ class _ImageViewState extends State<ImageView> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: List.generate(
             buttonList.length, 
             (index){

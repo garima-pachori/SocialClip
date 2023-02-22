@@ -21,8 +21,8 @@ class _ImageHomePageState extends State<ImageHomePage> {
         child: GridView(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            crossAxisSpacing: 8,
-            mainAxisExtent: 8,
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
           ),
           children:
             List.generate(10, (index)

@@ -6,6 +6,7 @@ import 'package:social_clip/screens/NavigationPage.dart';
 import 'package:social_clip/screens/Auth/SignUpPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:social_clip/screens/Splash_Screen.dart';
+import 'package:social_clip/screens/main_activity.dart';
 
 
 Future main() async{
@@ -29,11 +30,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const MainActivity(),
       routes: {
-        NavigationPage.route: (context) => NavigationPage(),
-        LoginPage.route: (context) => LoginPage(),
-        SignUpPage.route: (context) => SignUpPage(),
+        NavigationPage.route: (context) => const NavigationPage(),
+        LoginPage.route: (context) => const LoginPage(),
+        SignUpPage.route: (context) => const SignUpPage(),
       },
     ),
   );
