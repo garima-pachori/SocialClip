@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:social_clip/Provider/BottomNavProvider.dart';
 import 'package:social_clip/screens/Auth/LoginPage.dart';
 import 'package:social_clip/screens/NavigationPage.dart';
 import 'package:social_clip/screens/Auth/SignUpPage.dart';
@@ -19,7 +21,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => BottomNavProvider())
+      ],
+      child: MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -29,6 +35,7 @@ class MyApp extends StatelessWidget {
         LoginPage.route: (context) => LoginPage(),
         SignUpPage.route: (context) => SignUpPage(),
       },
-    );
+    ),
+  );
   }
 }
