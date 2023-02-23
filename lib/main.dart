@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:social_clip/Provider/BottomNavProvider.dart';
+import 'package:social_clip/Provider/getStatusProvider.dart';
 import 'package:social_clip/screens/Auth/LoginPage.dart';
 import 'package:social_clip/screens/NavigationPage.dart';
 import 'package:social_clip/screens/Auth/SignUpPage.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => BottomNavProvider())
+        ChangeNotifierProvider(create: (_) => BottomNavProvider()),
+        ChangeNotifierProvider(create: (_) => GetStatusProvider())
       ],
       child: MaterialApp(
       theme: ThemeData(

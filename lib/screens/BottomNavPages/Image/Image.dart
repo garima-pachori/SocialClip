@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:social_clip/Provider/getStatusProvider.dart';
 import 'package:social_clip/screens/BottomNavPages/Image/image_view.dart';
 import 'package:social_clip/screens/main_activity.dart';
 
@@ -11,6 +13,13 @@ class ImageHomePage extends StatefulWidget {
 }
 
 class _ImageHomePageState extends State<ImageHomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Provider.of<GetStatusProvider>(context, listen: false).getStatus();
+  }
 
   @override
 
